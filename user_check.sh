@@ -1,7 +1,10 @@
 #!/bin/bash
 
-#This script will check if the specified user has been added to the servers specified in the ips.txt file by checking /etc/passwd. 
-#Additionally, results will be written to a log file called check_user.log with the host, username, date, and time. 
+:' This script will check if the specified user has been added to the servers 
+specified in the ips.txt file by checking /etc/passwd. Additionally, results will be 
+written to a log file called check_user.log with the host, username, date, and time.
+SSH connections are made with password auth and strict host key chekcing disabled.
+: 
 
 #Written by Nick DeSantis
 
