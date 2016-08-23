@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#This script will check if the specified user has been added to the servers specified in the ips.txt file by checking /etc/passwd. Results will be written to a log file called check_user.log with the host, username, date, and time. 
+#This script will check if the specified user has been added to the servers specified in the ips.txt file by checking /etc/passwd. 
+#Additionally, results will be written to a log file called check_user.log with the host, username, date, and time. 
 
-#Wriiten by Nick DeSantis
+#Written by Nick DeSantis
 
 IP=`cat ips.txt`
 now=$(date '+%d-%m-%y')
