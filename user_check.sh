@@ -25,7 +25,7 @@ STATUS=`ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o PasswordAuthentic
 if [ -z $STATUS ];
 then
 echo "The user does not appear to be on the system";
-echo "${i} ${user} ${now} ${t}" >> check_user.log;
+echo "${i} ${user}is not present on the system ${now} ${t}" >> check_user.log;
 fi
 echo $STATUS;
 echo '------------------------------------------------------------';
