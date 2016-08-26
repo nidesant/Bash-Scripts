@@ -21,7 +21,7 @@ do
 echo '------------------------------------------------------------';
 echo "Connecting to $i";
 echo "";
-STATUS=`ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -o PasswordAuthentication=no $i "cat /etc/passwd" | grep "$user";`
+STATUS=`ssh -o StrictHostKeyChecking=no -o ConnectTimeout=3 -o PasswordAuthentication=no $i "cat /etc/passwd" | grep "$user";`
 if [ -z $STATUS ];
 then
 echo "The user does not appear to be on the system";
