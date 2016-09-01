@@ -15,6 +15,6 @@ df -h | tail -n +2 | awk '{print $1 " " $5}' | sed 's/.$//' | while read i; do
   util=$(echo $i | awk '{print $2}')
     if [ $util -ge $threshold ]; then
       echo $part is ${util}% full. An email has been sent to your administrator.
-      mail -s "Critical: $part is ${util}% full. Clear space immeadiately!" $admin </dev/null
+      echo $i | mail -s "Critical: $part is ${util}% full. Clear space immeadiately!" $admin 
     fi
 done
