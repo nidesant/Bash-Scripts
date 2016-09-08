@@ -6,17 +6,17 @@
 #This script assumes you have already generated an ssh key pair on your local machine.
 
 #authorized_keys might also be named id_rsa.pub depending on how you generated your key pair
-chmod 700 ~/.ssh; chmod 640 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh; chmod 640 ~/.ssh/id_rsa.pub
 
 echo Please enter IP or hostname of remote host:
 read host
 
 #Replace 'user' with your username
-dir_check=`ssh user@$host 'ls -al | grep .ssh'`
+dir_check=`ssh nidesant@$host 'cd .ssh; ls -al | grep authorized_keys'`
 
 if [[ -z $dir_check ]]; then
   echo ".ssh directory or authorized_keys file doesn't appear to be present. Re-enter your password for directory and/or file to be created."
-  `ssh user@$host 'mkdir -p .ssh; chmod 700 .ssh; cd .ssh/; touch authorized_keys; chmod 640 authorized_keys'`
+  `ssh nidesant@$host 'mkdir -p .ssh; chmod 700 .ssh; cd .ssh/; touch authorized_keys; chmod 640 authorized_keys'`
   echo "Directory .ssh and authorized_keys file have been created!"
   echo "Please re-enter your password one more time for your key to be uploaded"
 else
@@ -24,7 +24,7 @@ else
 fi
 
 #This path might vary and need to be changed based on your local path i.e. your public key might be named id_rsa.pub instead of authroized_keys or vice versa
-`cat ~/.ssh/authorized_keys | ssh user@$host 'cat >> .ssh/authorized_keys'`
+`cat ~/.ssh/id_rsa.pub | ssh nidesant@$host 'cat >> .ssh/authorized_keys'`
 echo "Your public key has been added to the remote server! You should now be able to login without a password!"
 
 
