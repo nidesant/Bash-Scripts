@@ -18,7 +18,7 @@ if [[ -z $dir_check ]]; then
   echo ".ssh directory or authorized_keys file doesn't appear to be present. Re-enter your password for directory and/or file to be created."
   `ssh nidesant@$host 'mkdir -p .ssh; chmod 700 .ssh; cd .ssh/; touch authorized_keys; chmod 640 authorized_keys'`
   echo "Directory .ssh and authorized_keys file have been created!"
-  echo "Please re-enter your password one more time for your key to be uploaded"
+  echo "Please re-enter your password one more time for your key to be uploaded!"
 else
   echo "~/.ssh/authorized_keys already exists. You will be prompted once more for your password and your key will be uploaded!"
 fi
