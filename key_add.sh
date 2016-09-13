@@ -14,7 +14,6 @@ read host
 echo Please enter your username:
 read username
 
-#Replace 'user' with your username
 dir_check=`ssh $username@$host 'cd .ssh; ls -al | grep authorized_keys'`
 
 if [[ -z $dir_check ]]; then
