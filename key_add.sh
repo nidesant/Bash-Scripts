@@ -25,6 +25,5 @@ else
   echo "~/.ssh/authorized_keys already exists. You will be prompted once more for your password and your key will be uploaded!"
 fi
 
-#This path might vary and need to be changed based on your local path i.e. your public key might be named id_rsa.pub instead of authroized_keys or vice versa
 `cat ~/.ssh/id_rsa.pub | ssh $username@$host 'cat >> .ssh/authorized_keys'`
 echo "Your public key has been added to the remote server! You should now be able to login without a password!"
