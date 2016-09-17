@@ -5,4 +5,3 @@
 #Note that if the parent PID is init (1), the process cannot be killed. 
 
 ps -elf | awk '{print $2 " " $4 " " $5}'
-
