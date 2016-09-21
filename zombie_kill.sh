@@ -16,6 +16,7 @@ else
   else
     kill -s SIGCHLD $k 
     echo "Sending SIGCHLD signal to parent process..."
+  fi
     if [ -z $k ]; then
       echo "Zombies have been killed!"
     else
