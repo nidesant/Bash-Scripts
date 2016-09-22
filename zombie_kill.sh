@@ -11,8 +11,7 @@ if [ -z $z ]; then
   echo "There are currently no zombie processes!"
 else
   echo "Zombies found, trying to kill zombies!"
-fi
-if [ $k == 1 ]; then
+if [ "$k" == 1 ]; then
   echo "PPID is 1 (init or systemd), and cannot be killed. If necessary, reboot the server."
 else
   kill -s SIGCHLD $k 
@@ -22,5 +21,5 @@ if [ -z $k ]; then
   echo "Zombies have been killed!"
 else
     echo "Not able to kill all zombies!"
-fi  
-   
+fi   
+fi
