@@ -21,5 +21,6 @@ if [ -z $k ]; then
   echo "Zombies have been killed!"
 else
     echo "Not able to kill all zombies!"
+    kill -9 $k
 fi   
 fi
