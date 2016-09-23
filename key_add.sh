@@ -16,7 +16,7 @@ read username
 
 dir_check=`ssh $username@$host 'cd .ssh; ls -al | grep authorized_keys'`
 
-if [[ -z $dir_check ]]; then
+if [ -z "$dir_check" ]; then
   echo ".ssh directory or authorized_keys file doesn't appear to be present. Re-enter your password for directory and/or file to be created."
   `ssh $username@$host 'mkdir -p .ssh; chmod 700 .ssh; cd .ssh/; touch authorized_keys; chmod 640 authorized_keys'`
   echo "Directory .ssh and authorized_keys file have been created!"
