@@ -3,7 +3,8 @@
 #This script will add your public key to ~/.ssh/authorized_keys on the specified remote server for key based authentication. 
 #Script will check if .ssh directory and authorized_keys file exists on the remote server.
 #It will also set correct permissions locally and  on the remote server i.e. 'chmod 700 .ssh' and 'chmod 640 .ssh/authorized_keys'
-#This script assumes you have already generated an ssh key pair on your local machine.
+#This script assumes you have already generated an ssh key pair on your local machine and that your user and password have been
+#generated on the remote server.
 
 #id_rsa.pub might also be named authorized_keys depending on your configuration or how you generated your key pair
 chmod 700 ~/.ssh; chmod 640 ~/.ssh/id_rsa.pub
