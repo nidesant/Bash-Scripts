@@ -7,7 +7,7 @@
 z=`ps -elf | awk '{print $2 " " $4 " " $5}' | tail -n +2 | grep 'Z'`
 k=$(echo $z | awk '{print $5}')
 
-if [ -z $z ]; then 
+if [[ -z $z ]]; then 
   echo "There are currently no zombie processes!"
 else
   echo "Zombies found, trying to kill zombies!"
