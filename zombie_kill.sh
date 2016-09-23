@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Will kill all zombie proccesses by sending SIGCHLD signal to parent process to execute wait() system call. 
-#If the parent process ignores the SIGCHLD signal, the parent process will be killed and restarted.
+#If the parent process ignores the SIGCHLD signal, the parent process will be killed.
 #Note that if the parent PID is init or systemd (1), the process cannot be killed. 
 
 z=`ps -elf | awk '{print $2 " " $4 " " $5}' | tail -n +2 | grep 'Z'`
