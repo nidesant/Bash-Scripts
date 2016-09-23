@@ -5,7 +5,7 @@
 #It will also set correct permissions locally and  on the remote server i.e. 'chmod 700 .ssh' and 'chmod 640 .ssh/authorized_keys'
 #This script assumes you have already generated an ssh key pair on your local machine.
 
-#authorized_keys might also be named authorized_keys depending on how you generated your key pair
+#id_rsa.pub might also be named authorized_keys depending on your configuration or how you generated your key pair
 chmod 700 ~/.ssh; chmod 640 ~/.ssh/id_rsa.pub
 
 echo Please enter IP or hostname of remote host:
