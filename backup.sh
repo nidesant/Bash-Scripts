@@ -2,13 +2,16 @@
 
 #Takes a daily backup of /var/log/messages for archival purposes. 
 #Script uses cd command instead of absolute paths for security reasons. 
-#To do: Set up email alert indicating success or failure, configure cron, edit path for where to place backup file. 
+#Will send email to $admin if backup is successful.
 
+admin=foo@bar.com
 of=messages-backup-$(date +%Y%m%d).tgz
 
 cd /var/log/
 tar -czvf $of messages
 cp $of /home/user/
 rm -rf $of
+
+
 
 
