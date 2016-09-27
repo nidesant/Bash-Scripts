@@ -8,7 +8,15 @@ admin=foo@bar.com
 of=messages-backup-$(date +%Y%m%d).tgz
 
 cd /var/log/
+
 tar -czvf $of messages
+
+if [ $? -eq 0 ]; then
+  mail -s "Backup of /var/log/messages was successful!" $admin
+else
+  mail -s "Backup of /var/log/messages has failed!" $admin
+fi
+
 cp $of /home/user/
 rm -rf $of
 
