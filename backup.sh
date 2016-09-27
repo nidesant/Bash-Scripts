@@ -9,16 +9,14 @@ of=messages-backup-$(date +%Y%m%d).tgz
 
 cd /var/log/
 
-tar -czvf $of messages
+tar -czvf $of messages && cp $of /home/user/ && rm -rf $of
 
 if [ $? -eq 0 ]; then
-  mail -s "Backup of /var/log/messages was successful!" $admin
+  echo Success | mail -s "Backup of /var/log/messages was successful!" $admin
 else
-  mail -s "Backup of /var/log/messages has failed!" $admin
+  echo Failure | mail -s "Backup of /var/log/messages has failed!" $admin
 fi
 
-cp $of /home/user/
-rm -rf $of
 
 
 
