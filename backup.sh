@@ -1,6 +1,5 @@
 #!/bin/bash
-#Directories to back up: /etc, /boot, /root, parts of var
-#Will change cp line to scp and copy files to remote server
+#Directories to still back up: parts of /var
 
 admin="foo@bar.com"
 dir_one=etc-backup-$(date +%Y%m%d).tgz
