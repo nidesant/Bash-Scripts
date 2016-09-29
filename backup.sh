@@ -1,5 +1,7 @@
 #!/bin/bash
+
 #Directories to still back up: parts of /var
+#Create complimentary script to rotate backups for remote server
 
 admin="foo@bar.com"
 dir_one=etc-backup-$(date +%Y%m%d).tgz
