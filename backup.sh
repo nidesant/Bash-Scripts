@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #Directories to still back up: parts of /var
-#Create complimentary script to rotate backups for remote server
+#Complimentary script 'backup_rotate.sh' to run as cron on the remote sevrer to rotate backup files
+#Must be root to run, so it is advised key authentication is enabled between servers to avoid superfluous password prompts 
 
 admin="foo@bar.com"
 dir_one=etc-backup-$(date +%Y%m%d).tgz
