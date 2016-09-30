@@ -51,7 +51,3 @@ if [ $? -eq 0 ]; then
 else
   echo Failure | mail -s "Backup of /home has failed!" $admin
 fi
-
-
-
-
