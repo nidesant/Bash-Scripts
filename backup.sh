@@ -10,6 +10,7 @@ dir_two=boot-backup-$(date +%Y%m%d).tgz
 dir_three=usrlocal-backup-$(date +%Y%m%d).tgz
 dir_four=root-backup-$(date +%Y%m%d).tgz
 dir_five=home-backup-$(date +%Y%m%d).tgz
+dir_six=varlib-backup-$(date +%Y%m%d).tgz
 
 cd /tmp/
 
@@ -53,7 +54,7 @@ else
   echo Failure | mail -s "Backup of /home has failed!" $admin
 fi
 
-tar -czvf $dir_one /var/lib/; scp $dir_one <user>@<remote-host>:/mnt/backup/; rm -rf $dir_one
+tar -czvf $dir_six /var/lib/; scp $dir_six <user>@<remote-host>:/mnt/backup/; rm -rf $dir_six
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /var/lib/ was successful!" $admin
