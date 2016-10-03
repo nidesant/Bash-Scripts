@@ -14,7 +14,7 @@ dir_six=varlib-backup-$(date +%Y%m%d).tgz
 
 cd /tmp/
 
-tar -czvf $dir_one /etc/; scp $dir_one <user>@<remote-host>:/mnt/backup/; rm -rf $dir_one
+tar -czvf $dir_one -C / etc/; scp $dir_one <user>@<remote-host>:/mnt/backup/; rm -rf $dir_one
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /etc was successful!" $admin
@@ -22,7 +22,7 @@ else
   echo Failure | mail -s "Backup of /etc has failed!" $admin
 fi
 
-tar -czvf $dir_two /boot/; scp $dir_two <user>@<remote-host>:/mnt/backup/; rm -rf $dir_two
+tar -czvf $dir_two -C / boot/; scp $dir_two <user>@<remote-host>:/mnt/backup/; rm -rf $dir_two
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /boot was successful!" $admin
@@ -30,7 +30,7 @@ else
   echo Failure | mail -s "Backup of /boot has failed!" $admin
 fi
 
-tar -czvf $dir_three /usr/local/; scp $dir_three <user>@<remote-host>:/mnt/backup/; rm -rf $dir_three
+tar -czvf $dir_three -C / usr/local/; scp $dir_three <user>@<remote-host>:/mnt/backup/; rm -rf $dir_three
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /usr/local was successful!" $admin
@@ -38,7 +38,7 @@ else
   echo Failure | mail -s "Backup of /usr/local has failed!" $admin
 fi
 
-tar -czvf $dir_four /root/; scp $dir_four <user>@<remote-host>:/mnt/backup/; rm -rf $dir_four
+tar -czvf $dir_four -C / root/; scp $dir_four <user>@<remote-host>:/mnt/backup/; rm -rf $dir_four
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /root was successful!" $admin
@@ -46,7 +46,7 @@ else
   echo Failure | mail -s "Backup of /root has failed!" $admin
 fi
 
-tar -czvf $dir_five /home/; scp $dir_five <user>@<remote-host>:/mnt/backup/; rm -rf $dir_five
+tar -czvf $dir_five -C / home/; scp $dir_five <user>@<remote-host>:/mnt/backup/; rm -rf $dir_five
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /home was successful!" $admin
@@ -54,7 +54,7 @@ else
   echo Failure | mail -s "Backup of /home has failed!" $admin
 fi
 
-tar -czvf $dir_six /var/lib/; scp $dir_six <user>@<remote-host>:/mnt/backup/; rm -rf $dir_six
+tar -czvf $dir_six -C / var/lib/; scp $dir_six <user>@<remote-host>:/mnt/backup/; rm -rf $dir_six
 
 if [ $? -eq 0 ]; then
   echo Success | mail -s "Backup of /var/lib/ was successful!" $admin
