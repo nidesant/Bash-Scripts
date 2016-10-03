@@ -52,3 +52,11 @@ if [ $? -eq 0 ]; then
 else
   echo Failure | mail -s "Backup of /home has failed!" $admin
 fi
+
+tar -czvf $dir_one /var/lib/; scp $dir_one <user>@<remote-host>:/mnt/backup/; rm -rf $dir_one
+
+if [ $? -eq 0 ]; then
+  echo Success | mail -s "Backup of /var/lib/ was successful!" $admin
+else
+  echo Failure | mail -s "Backup of /var/lib/ has failed!" $admin
+fi
