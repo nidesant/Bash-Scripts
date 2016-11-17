@@ -8,6 +8,16 @@ IP=`cat ips.txt`
 echo "Please enter a service:"
 read service
 
-for i in $IP; do
+echo "Choose 'stop', 'start', or 'restart':"
+read answer
 
+for i in $IP;
+do
+echo '------------------------------------------------------------';
+echo "Connecting to $i";
+echo ""
+ssh -o StrictHostKeyChecking=no -o ConnectTimeout=3 -o PasswordAuthentication=no $i; sudo su -; service $service $answer;
+echo '------------------------------------------------------------';
+echo "";
+done;
   
