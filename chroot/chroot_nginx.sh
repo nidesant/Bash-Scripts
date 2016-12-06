@@ -50,7 +50,11 @@ cp -avr /etc/{ld.so.conf.d,prelink.conf.d} $D/etc
 stop_proc=`ps -ef | grep nginx | awk '{print $2}'`
 kill -9 $stop_proc
 
+# Starts chroot jail
+chroot $D /etc/nginx
 
+# Sarts chroot jail after system reboot
+echo 'chroot $D /etc/nginx' >> /etc/rc.local
 
 
 
